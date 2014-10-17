@@ -378,7 +378,8 @@ if( isset($_FILES['file']) && isset($_POST['dir']) ){
 	if( file_exists($where) && !isset($_POST['force']) ){
 		$ret['status']=1;
 		$ret['type']=is_dir($where) ? 'dir' : 'file';
-	}elseif(in_array($fext, $fext_blacklist) ||
+	}elseif(count($fext_whitelist) > 0 && !in_array($fext, $fext_whitelist) ||
+          in_array($fext, $fext_blacklist) ||
           !@move_uploaded_file($_FILES['file']['tmp_name'], $where)){
 		$ret['status']=2;
 	}

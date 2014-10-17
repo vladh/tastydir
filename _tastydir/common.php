@@ -10,8 +10,12 @@ if(!defined('TASTYDIR_VERSION')){
 // characters that are disallowed in filenames
 $fname_blacklist=array('\\','/',':','*','?','"','<','>','|','%','&',chr(255));
 
-// files with these extensions cannot be uploaded
-$fext_blacklist=array('');
+// files with these extensions cannot be uploaded. no leading dot, please.
+$fext_blacklist=array();
+
+// alternatively, fext_blacklist is overwritten by fext_whitelist, which
+// only allows the listed extensions. no leading dot here either.
+$fext_whitelist=array();
 
 // if you want the home directory to be something other than the actual directory tastydir is installed in, change this. FULL PATH PLEASE! default is blank.
 $homedir='';
