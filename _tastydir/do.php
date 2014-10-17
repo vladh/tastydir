@@ -371,12 +371,15 @@ if( isset($_FILES['file']) && isset($_POST['dir']) ){
 	
 	$dest=$_POST['dir'].'/';
 	$where=$dest.basename($_FILES['file']['name']);
+  $fext=strtolower(substr($where,strrpos($where,'.')+1));
+  echo $fext;
 	
 	$ret=array('status'=>0);
 	if( file_exists($where) && !isset($_POST['force']) ){
 		$ret['status']=1;
 		$ret['type']=is_dir($where) ? 'dir' : 'file';
-	}elseif(!@move_uploaded_file($_FILES['file']['tmp_name'], $where)){
+	}elseif(in_array($fext, $fext_blacklist) ||
+          !@move_uploaded_file($_FILES['file']['tmp_name'], $where)){
 		$ret['status']=2;
 	}
 	

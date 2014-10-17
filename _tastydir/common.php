@@ -5,14 +5,22 @@ if(!defined('TASTYDIR_VERSION')){
 	die();
 }
 
-// if you want the home directory to be something other than the actual directory tastydir is installed in, change this.
-// FULL PATH PLEASE! default is blank.
+// CONFIGURABLE OPTIONS
+
+// characters that are disallowed in filenames
+$fname_blacklist=array('\\','/',':','*','?','"','<','>','|','%','&',chr(255));
+
+// files with these extensions cannot be uploaded
+$fext_blacklist=array('');
+
+// if you want the home directory to be something other than the actual directory tastydir is installed in, change this. FULL PATH PLEASE! default is blank.
 $homedir='';
+
+// END OF CONFIGURABLE OPTIONS
 
 $t_fn='http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 $t_dn='http://'.unslash($_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/');
 $win=strtolower(substr(PHP_OS,0,3)) == "win";
-$fname_blacklist=array('\\','/',':','*','?','"','<','>','|','%','&',chr(255));
 
 if(empty($homedir)){
 	$path=dirname($_SERVER['SCRIPT_FILENAME']);
