@@ -1,12 +1,14 @@
 Tastydir - an AJAX file manager and directory listing
 ===================
 
-Introduction
-------------
-I originally made this script in 2010 and [sold it on CodeCanyon](http://codecanyon.net/item/tastydir-an-ajax-file-manager-and-dir-listing/117167).
-However, I've decided to make it open source, so that everyone will be able to use it and play with it.
+This repo contains Tastydir, a PHP file manager I made when I was 16. I put it up on CodeCanyon and it sold quite well — it was my first real project. It's archived here for sentimental reasons. :)
 
-**A note about code quality:** Tastydir works great, but I was 16 when I wrote it, so the code quality isn't amazing (it *does* come with lots of documentation though).
+Please don't use it!
+
+<br>
+<br>
+<br>
+<br>
 
 Installation
 ------------
