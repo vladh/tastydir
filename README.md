@@ -10,6 +10,10 @@ Please don't use it!
 <br>
 <br>
 
+Introduction
+------------
+Tastydir is a cross-platform PHP file management system which allows you to not only replace your traditional FTP client but also allow your users to view directories in a much more aesthetically pleasing way. 
+
 Installation
 ------------
 Simply upload everything to a directory of your choice.
